@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La tiendita de ROTO y Loca Vidita Mia</title>
+    <title>Loca Vidita Mia y ROTO</title>
     
     <style>
         /* 1. CONFIGURACIÓN GENERAL */
         body { 
             font-family: 'Arial Black', sans-serif; 
-            background-color: #f2f0ef; /* Blanco roto */
+            background-color: #f2f0ef; 
             color: #333; 
             margin: 0; 
             padding: 0; 
@@ -19,7 +19,7 @@
             background-color: #8E867E; 
             padding: 50px 20px; 
             text-align: center; 
-            border-bottom: 4px solid #ffea00; /* Línea amarilla */
+            border-bottom: 4px solid #ffea00; 
         }
 
         h1 { 
@@ -32,36 +32,34 @@
 
         header p { 
             color: #ffffff; 
-            font-weight: normal; 
             margin-top: 15px;
             font-size: 1.1em;
             line-height: 1.6;
         }
 
-        /* 2. MENÚ LATERAL AUTOMÁTICO (HOVER) */
+        /* 2. MENÚ LATERAL AUTOMÁTICO */
         .nav-container {
             position: fixed;
             left: 0;
             top: 0;
             height: 100vh;
-            width: 60px; /* Área que activa el menú al acercarse */
+            width: 60px;
             z-index: 1001;
         }
 
         .sidenav {
             height: 100%;
-            width: 0; /* Cerrado por defecto */
+            width: 0;
             position: fixed;
             z-index: 1000;
             top: 0;
             left: 0;
-            background-color: #1a1a1a; /* Tu negro favorito */
+            background-color: #1a1a1a;
             overflow-x: hidden;
-            transition: 0.5s ease; /* Deslizamiento suave */
+            transition: 0.5s ease;
             padding-top: 80px;
         }
 
-        /* Cuando el mouse entra al contenedor, se despliega */
         .nav-container:hover .sidenav {
             width: 280px;
         }
@@ -70,19 +68,18 @@
             padding: 15px 30px;
             text-decoration: none;
             font-size: 18px;
-            color: #ff00ff; /* Fucsia */
+            color: #ff00ff;
             display: block;
             transition: 0.3s;
-            white-space: nowrap; /* Evita que el texto se rompa al abrir */
+            white-space: nowrap;
         }
 
         .sidenav a:hover { 
-            color: #ffea00; /* Amarillo al pasar el mouse */
+            color: #ffea00; 
             background-color: #333;
             padding-left: 40px;
         }
 
-        /* Indicador visual flotante */
         .btn-menu-fake {
             position: fixed;
             top: 20px;
@@ -95,7 +92,57 @@
             box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* 3. BUSCADOR */
+        /* 3. SECCIÓN DE BOTONES GRANDES (NUEVO) */
+        .panel-navegacion {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .boton-puerta {
+            position: relative;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid #ff00ff; /* Borde fucsia artesano */
+            text-decoration: none;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .boton-puerta:hover {
+            transform: scale(1.03);
+            border-color: #ffea00; /* Cambia a amarillo al pasar el mouse */
+        }
+
+        .boton-puerta img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6); /* Oscurece un poco la imagen para que se lea el texto */
+            transition: filter 0.3s;
+        }
+
+        .boton-puerta:hover img {
+            filter: brightness(0.8);
+        }
+
+        .boton-puerta span {
+            position: absolute;
+            color: white;
+            font-size: 1.8rem;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        /* BUSCADOR */
         .buscador-contenedor {
             padding: 30px 20px;
             text-align: center;
@@ -108,88 +155,35 @@
             border: 3px solid #ff00ff;
             border-radius: 30px;
             font-family: inherit;
-            font-size: 1rem;
             outline: none;
         }
 
-        /* 4. GALERÍA DE PRODUCTOS */
-        .galeria { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-            padding: 25px; 
+        /* PIE DE PÁGINA */
+        .pie-pagina {
+            background-color: #8E867E;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
         }
 
-        .tarjeta { 
-            background: #8E867E; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            border: 2px solid #ffea00; 
-            text-align: center; 
-            padding-bottom: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .tarjeta:hover { 
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .tarjeta img { 
-            width: 100%; 
-            height: 280px; 
-            object-fit: cover; 
-            display: block;
-            border-bottom: 2px solid #ffea00;
-        }
-
-        .tarjeta h3 { 
-            color: #ffea00; 
-            margin: 20px 10px 10px; 
-            font-size: 1.1em;
-            min-height: 50px; /* Para alinear los botones */
-        }
-
-        .precio { 
-            color: #ffffff; 
-            font-weight: bold; 
-            font-size: 1.4em; 
-            display: block; 
-            margin-bottom: 20px; 
-        }
-
-        .btn-whatsapp { 
-            background-color: #25d366; 
-            color: white; 
-            text-decoration: none; 
-            padding: 12px 25px; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-            transform: scale(1.05);
-        }
-
-        .sin-stock {
-            background-color: #555 !important;
-            cursor: not-allowed;
+        .enlace-red {
+            color: #ffea00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<!-- ZONA DEL MENÚ -->
 <div class="nav-container">
     <div class="btn-menu-fake">☰</div>
     <div id="menuLateral" class="sidenav">
-         <a href="roto.html">El lado ROTO de la Luna</a>
+        <a href="roto.html">El lado ROTO de la Luna</a>
         <a href="locaviditamia.html">Loca vidita Mia </a> 
         <a href="urbex.html">Sobre el Urbex</a>
-         <a href="imanesdark.html">Imanes Dark</a>
+        <a href="imanesdark.html">Imanes Dark</a>
         <a href="sobremí.html">Sobre mí</a>
         <a href="cuadernos.html">Cuadernos</a>
     </div>
@@ -200,7 +194,6 @@
     <p>
         Objetos coloridos que rompen la monotonía y transforman los espacios<br>
         <strong>UNA PÁGINA EN CONSTANTE CONSTRUCCIÓN</strong>
-        
     </p>
 </header>
 
@@ -208,12 +201,34 @@
     <input type="text" id="inputBusqueda" placeholder="Buscar producto (ej: flores, fucsia...)">
 </div>
 
+<div class="panel-navegacion">
+    
+    <a href="tienda.html" class="boton-puerta">
+        <img src="tu-imagen-tienda.jpg" alt="Tienda">
+        <span>LA TIENDA</span>
+    </a>
 
-</section>
-    <footer class="pie-pagina">
+    <a href="locaviditamia.html" class="boton-puerta">
+        <img src="tu-imagen-locavidita.jpg" alt="Loca Vidita Mia">
+        <span>Loca Vidita Mia</span>
+    </a>
+
+    <a href="roto.html" class="boton-puerta">
+        <img src="tu-imagen-roto.jpg" alt="El lado ROTO de la Luna">
+        <span>El lado ROTO de la Luna</span>
+    </a>
+
+    <a href="urbex.html" class="boton-puerta">
+        <img src="tu-imagen-fotos.jpg" alt="Fotos Curiosas">
+        <span>Fotos Curiosas</span>
+    </a>
+
+</div>
+
+<footer class="pie-pagina">
     <div class="redes-sociales">
-        <a href="https://www.instagram.com/loca.vidita.mia/" target="_blank" class="enlace-red">Instagram</a>
-       <a href="https://www.instagram.com/el.ladoroto.delaluna?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="enlace-red">Instagram</a>
+        <a href="https://www.instagram.com/loca.vidita.mia/" target="_blank" class="enlace-red">Instagram Loca Vidita</a>
+        <a href="https://www.instagram.com/el.ladoroto.delaluna" target="_blank" class="enlace-red">Instagram ROTO</a>
         <a href="mailto:lutoys2009@yahoo.com.ar" class="enlace-red">Email</a>
     </div>
     <p class="copyright">&copy; 2026 Loca Vidita Mia - Hecho con amor</p>
