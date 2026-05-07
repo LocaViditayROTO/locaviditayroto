@@ -9,17 +9,17 @@
         /* 1. CONFIGURACIÓN GENERAL */
         body { 
             font-family: 'Arial Black', sans-serif; 
-            background-color: #48494B; gris topo
-            color: #333; 
+            background-color: #8E867E; /* GRIS TOPO */
+            color: #ffffff; 
             margin: 0; 
             padding: 0; 
         }
 
         header { 
-            background-color: #8E867E; 
+            background-color: #1a1a1a; /* Negro para que resalte el amarillo */
             padding: 50px 20px; 
             text-align: center; 
-            border-bottom: 4px solid #ffea00; 
+            border-bottom: 4px solid #ffea00; /* LÍNEA AMARILLA */
         }
 
         h1 { 
@@ -68,7 +68,7 @@
             padding: 15px 30px;
             text-decoration: none;
             font-size: 18px;
-            color: #ff00ff;
+            color: #ff00ff; /* FUCSIA */
             display: block;
             transition: 0.3s;
             white-space: nowrap;
@@ -92,7 +92,7 @@
             box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* 3. SECCIÓN DE BOTONES GRANDES (NUEVO) */
+        /* 3. SECCIÓN DE BOTONES GRANDES */
         .panel-navegacion {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -107,7 +107,7 @@
             height: 350px;
             border-radius: 15px;
             overflow: hidden;
-            border: 4px solid #ff00ff; /* Borde fucsia artesano */
+            border: 4px solid #ffea00; /* BORDES AMARILLOS */
             text-decoration: none;
             transition: transform 0.3s, border-color 0.3s;
             display: flex;
@@ -117,32 +117,33 @@
 
         .boton-puerta:hover {
             transform: scale(1.03);
-            border-color: #ffea00; /* Cambia a amarillo al pasar el mouse */
+            border-color: #ff00ff; /* Cambia a fucsia al pasar el mouse */
         }
 
         .boton-puerta img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.6); /* Oscurece un poco la imagen para que se lea el texto */
+            filter: brightness(0.5); /* Oscurecido para legibilidad */
             transition: filter 0.3s;
         }
 
         .boton-puerta:hover img {
-            filter: brightness(0.8);
+            filter: brightness(0.7);
         }
 
         .boton-puerta span {
             position: absolute;
-            color: white;
+            color: #ffea00; /* TEXTO AMARILLO */
             font-size: 1.8rem;
             text-align: center;
             text-transform: uppercase;
             padding: 10px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
         }
 
-        /* BUSCADOR */
+        /* 4. BUSCADOR */
         .buscador-contenedor {
             padding: 30px 20px;
             text-align: center;
@@ -156,15 +157,17 @@
             border-radius: 30px;
             font-family: inherit;
             outline: none;
+            background-color: #f2f0ef;
         }
 
-        /* PIE DE PÁGINA */
+        /* 5. PIE DE PÁGINA */
         .pie-pagina {
-            background-color: #8E867E;
+            background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 40px 20px;
             margin-top: 50px;
+            border-top: 4px solid #ffea00;
         }
 
         .enlace-red {
@@ -204,7 +207,7 @@
 <div class="panel-navegacion">
     
     <a href="tienda.html" class="boton-puerta">
-        <img src=".cuadernolvm3jpg" alt="Tienda">
+        <img src="cuadernolvm3.jpg" alt="Tienda">
         <span>LA TIENDA</span>
     </a>
 
