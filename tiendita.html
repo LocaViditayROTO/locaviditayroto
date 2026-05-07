@@ -1,0 +1,186 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte y Corazón</title>
+    <style>
+        /* Estilos generales con tu paleta de colores */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfdfd; /* Fondo claro para que resalten las obras */
+            color: #333;
+        }
+
+        /* Encabezado Artístico */
+        header {
+            background: linear-gradient(135deg, #ff00ff, #ffee00); /* Fucsia y Amarillo vibrante */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #e8f5e9; /* Pastel verde */
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #d81b60;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        /* Secciones */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            border-bottom: 3px solid #ffee00;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: #ff00ff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Manos que Crean Mundo</h1>
+        <p>Exploraciones artísticas, trazos analógicos y piezas únicas hechas con el alma.</p>
+    </header>
+
+    <nav>
+        <a href="#cuadernos">Cuadernos</a>
+        <a href="#artesanias">Artesanías</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <section id="cuadernos">
+            <h2>Cuadernos</h2>
+            <p>Piezas de diseño original con portadas ilustradas a mano, pensadas para guardar tus propias historias.</p>
+            <div class="grid">
+                <div class="card">
+                    <div style="height:200px; background-color:#fff9c4; display:flex; align-items:center; justify-content:center;">Portada Ilustrada</div>
+                    <div class="card-content">
+                        <h3>Cuaderno 15x21cm</h3>
+                        <p>Tapa dura, anillado metálico y detalles en acrílico.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="height:200px; background-color:#f8bbd0; display:flex; align-items:center; justify-content:center;">Serie Retratos</div>
+                    <div class="card-content">
+                        <h3>Cuaderno 17.6x21cm</h3>
+                        <p>Diseño exclusivo de la colección "Roto".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="artesanias">
+            <h2>Artesanías</h2>
+            <p>Objetos intervenidos, máscaras de arcilla y piezas únicas que celebran lo imperfecto y lo hecho a mano.</p>
+            <div class="grid">
+                <div class="card">
+                    <div style="height:200px; background-color:#e1f5fe; display:flex; align-items:center; justify-content:center;">Máscara Intervenida</div>
+                    <div class="card-content">
+                        <h3>Máscaras de Arcilla</h3>
+                        <p>Modelado manual con acabados en microfibra y tintas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="height:200px; background-color:#f1f8e9; display:flex; align-items:center; justify-content:center;">Arte en Madera</div>
+                    <div class="card-content">
+                        <h3>Piezas en Madera</h3>
+                        <p>Pintura acrílica sobre soportes recuperados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Arte y Artesanía Local. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
