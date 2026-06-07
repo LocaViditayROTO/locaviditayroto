@@ -143,8 +143,6 @@
             text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
         }
 
-        }
-
         #inputBusqueda {
             padding: 15px;
             width: 80%;
@@ -154,6 +152,103 @@
             font-family: inherit;
             outline: none;
             background-color: #f2f0ef;
+        }
+
+        /* 4. NUEVOS ESTILOS PARA LAS TARJETAS EN OFERTA (DÍA DEL PADRE) */
+        .seccion-ofertas {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .titulo-ofertas {
+            color: #ffea00;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-bottom: 3px dashed #ff00ff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .contenedor-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .tarjeta {
+            background-color: #1a1a1a; /* Fondo oscuro que contrasta con el gris topo */
+            border: 3px solid #ffea00; /* Borde amarillo fiel a tu marca */
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: #ff00ff; /* Pasa a fucsia en el hover */
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #333;
+        }
+
+        .tarjeta h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin: 15px 0 10px 0;
+            font-weight: 600;
+            height: 50px; /* Mantiene la alineación si los títulos tienen distintos largos */
+            overflow: hidden;
+        }
+
+        .precio {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffea00; /* Precio en amarillo destacado */
+            margin-bottom: 20px;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background: linear-gradient(135px, #00c6ff, #0072ff); /* Degradado azul Mercado Pago */
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-comprar:hover {
+            background: linear-gradient(135px, #0072ff, #0052d4);
+            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.5);
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        .btn-comprar:active {
+            transform: translateY(1px);
         }
 
         /* 5. PIE DE PÁGINA */
@@ -195,12 +290,10 @@
         <strong>UNA PÁGINA EN CONSTANTE CONSTRUCCIÓN</strong>
         <br> <br>
         Soy Valeria<br>
-    Exploradora de rincones olvidados, artesana por necesidad y artista por supervivencia. <br>
-    Desde el 2010 dándole forma a Loca Vidita Mia y encontrando la belleza <br>en lo que otros llaman "ROTO". 
+        Exploradora de rincones olvidados, artesana por necesidad y artista por supervivencia. <br>
+        Desde el 2010 dándole forma a Loca Vidita Mia y encontrando la belleza <br>en lo que otros llaman "ROTO". 
     </p>
 </header>
-
-
 
 <div class="panel-navegacion">
     
@@ -226,6 +319,63 @@
 
 </div>
 
+<!-- NUEVA SECCIÓN DE OFERTAS: DÍA DEL PADRE -->
+<section class="seccion-ofertas">
+    <h2 class="titulo-ofertas">🔥 Especial Día del Padre 🔥</h2>
+    
+    <div class="contenedor-productos">
+        
+        <!-- ARTÍCULO 1 -->
+        <div class="tarjeta">
+            <img src="papa1.jpg" alt="Producto Día del Padre 1">
+            <h3>Artículo Especial 1 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+        <!-- ARTÍCULO 2 -->
+        <div class="tarjeta">
+            <img src="papa2.jpg" alt="Producto Día del Padre 2">
+            <h3>Artículo Especial 2 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+        <!-- ARTÍCULO 3 -->
+        <div class="tarjeta">
+            <img src="papa3.jpg" alt="Producto Día del Padre 3">
+            <h3>Artículo Especial 3 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+        <!-- ARTÍCULO 4 -->
+        <div class="tarjeta">
+            <img src="papa4.jpg" alt="Producto Día del Padre 4">
+            <h3>Artículo Especial 4 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+        <!-- ARTÍCULO 5 -->
+        <div class="tarjeta">
+            <img src="papa5.jpg" alt="Producto Día del Padre 5">
+            <h3>Artículo Especial 5 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+        <!-- ARTÍCULO 6 -->
+        <div class="tarjeta">
+            <img src="papa6.jpg" alt="Producto Día del Padre 6">
+            <h3>Artículo Especial 6 - Edición Limitada</h3>
+            <span class="precio">$ 28.500</span>
+            <a href="#" target="_blank" class="btn-comprar">💳 Comprar Ahora</a>
+        </div>
+
+    </div>
+</section>
+
 <footer class="pie-pagina">
     <div class="redes-sociales">
         <a href="https://www.instagram.com/loca.vidita.mia/" target="_blank" class="enlace-red">Instagram Loca Vidita</a>
@@ -234,6 +384,7 @@
     </div>
     <p class="copyright">&copy; 2026 Loca Vidita Mia | Todos los derechos reservados.</p>
 </footer>
+
 <script>
     // 1. Identificamos el input del buscador
     const buscadorTienda = document.getElementById('inputBusqueda');
